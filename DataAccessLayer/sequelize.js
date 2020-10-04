@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 
-const PortfolioModel = require("./models/portfolio");
-const ShareModel = require("./models/share");
+const PortfolioModel = require("../EntitiesLayer/portfolio");
+const ShareModel = require("../EntitiesLayer/share");
 
 const sequelize = new Sequelize("super_traders", "postgres", "admin1234", {
   host: "localhost",
@@ -16,9 +16,9 @@ const sequelize = new Sequelize("super_traders", "postgres", "admin1234", {
 
 try {
   sequelize.authenticate();
-  console.log('Connection has been established successfully.');
+  console.log("Connection has been established successfully.");
 } catch (error) {
-  console.error('Unable to connect to the database:', error);
+  console.error("Unable to connect to the database:", error);
 }
 
 const Portfolio = PortfolioModel(sequelize, Sequelize);
