@@ -26,9 +26,9 @@ const Share = ShareModel(sequelize, Sequelize);
 
 Share.belongsTo(Portfolio);
 
-sequelize.sync({ force: true }).then(() => {
+/*sequelize.sync({ force: true }).then(() => {
   console.log(`Database & tables created!`);
-});
+});*/
 
 module.exports = {
   Portfolio,
