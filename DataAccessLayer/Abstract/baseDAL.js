@@ -48,6 +48,16 @@ class BaseDAL {
       return { error: error.message };
     }
   }
+
+  async getAllByQuery(query) {
+    try {
+      return await this.model.findAll({
+        where: query,
+      });
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
 }
 
 module.exports = BaseDAL;
